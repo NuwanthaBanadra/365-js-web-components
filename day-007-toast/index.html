@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Day 7 – Toast Notifications</title>
+    <script src="toast-box.js" defer></script>
+</head>
+
+<body>
+    <h1>Day 7: Toast Notification Component</h1>
+
+    <button id="showToast">Show Toast</button>
+
+    <toast-box></toast-box>
+
+    <script>
+        const toast = document.querySelector("toast-box");
+
+        document.getElementById("showToast").onclick = () => {
+            toast.show("This is a toast message!", 3000);
+        };
+    </script>
+</body>
+
+</html>
