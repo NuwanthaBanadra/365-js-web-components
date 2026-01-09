@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Day 9 – Progress Bar</title>
+    <script src="progress-bar.js" defer></script>
+</head>
+
+<body>
+    <h1>Day 9: Progress Bar Component</h1>
+
+    <progress-bar value="30"></progress-bar>
+
+    <button id="increase">Increase</button>
+
+    <script>
+        const bar = document.querySelector("progress-bar");
+        document.getElementById("increase").onclick = () => {
+            let current = Number(bar.getAttribute("value"));
+            current = Math.min(current + 10, 100);
+            bar.setAttribute("value", current);
+        };
+    </script>
+</body>
+
+</html>
