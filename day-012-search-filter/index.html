@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Day 12 – Search Filter</title>
+    <script src="search-filter.js" defer></script>
+</head>
+
+<body>
+    <h1>Day 12: Search Filter Component</h1>
+
+    <search-filter></search-filter>
+
+    <ul id="items">
+        <li>JavaScript</li>
+        <li>Web Components</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Frontend</li>
+    </ul>
+
+    <script>
+        const filter = document.querySelector("search-filter");
+        const items = document.querySelectorAll("#items li");
+
+        filter.addEventListener("filter", (e) => {
+            const query = e.detail.toLowerCase();
+            items.forEach(item => {
+                item.style.display = item.textContent.toLowerCase().includes(query)
+                    ? "list-item"
+                    : "none";
+            });
+        });
+    </script>
+</body>
+
+</html>
